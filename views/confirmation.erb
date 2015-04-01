@@ -1,0 +1,8 @@
+<% if params[:Name] == '' %>
+  Who are you?
+<% else %>
+  Welcome, <%= params[:Name] %>
+  <form action="/game">
+    <input type="submit" value="Play">
+  </form>
+<% end %>
