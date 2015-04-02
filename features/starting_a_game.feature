@@ -30,3 +30,14 @@ Feature: Starting the game
   Scenario: Starting the game
     Given I am on the game page
     Then I should see the game board
+
+  Scenario: Starting the game
+  Given I am on the game page
+  # When A boat is in A1
+  When I fire at A1
+  Then I should see 'Hit'
+
+# Scenario: Placing a boat
+#   Given I am on the game page
+#   When I click A1
+#   Then I should see 'Ship

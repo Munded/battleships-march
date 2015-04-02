@@ -42,3 +42,12 @@ end
 Then(/^I should see the game board$/) do
   page.has_content?
 end
+
+When(/^I fire at A1$/) do
+  click_link('A1')
+end
+
+Then(/^I should see 'Hit'$/) do
+  expect(page).to have_content 'Hit'
+end
+

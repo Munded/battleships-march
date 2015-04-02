@@ -1,0 +1,19 @@
+<%= @board.grid %>
+
+<table style="width:100%">
+  <tr>
+    <td><a href=<%= @board.grid %>>A1</td>
+    <td></td> 
+    <td>A3</td>
+  </tr>
+  <tr>
+    <td><%= @board.grid[:B1].class.name %></td>
+    <td><%= @board.grid[:B2].class.name %></td> 
+    <td><%= @board.grid[:B3].class.name %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+</table>

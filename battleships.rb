@@ -1,6 +1,5 @@
 require 'sinatra/base'
-
-require './lib/board.rb'
+Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 
 class BattleShipsWeb < Sinatra::Base
@@ -14,10 +13,14 @@ class BattleShipsWeb < Sinatra::Base
   end
 
   post '/confirmation' do
+    @game = Game.new(Player.new("George"), Player.new("Ed"))
+    @player_one_name = @game.player_1.name
+    @player_two_name = @game.player_2.name
     erb :confirmation
   end
 
   get '/game' do
+    @board = Board.new(cell: Cell, size: 9)
     erb :game
   end
 
